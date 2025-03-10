@@ -10,24 +10,39 @@ Notes abour scripts:
 - Remaining files are for plotting and summarizing the analysis results
 
 ```bash
-project/
+project_QI/
 │
 ├── data/
-│   └── als.csv
+│   └── ghsl
+│   └── housing_data_ACS
+│   └── osm
+│   └── population
+│   └── scripts_data_dowmload
+│   └── tigerline_shapefiles
+│   └── 
 │
 └── scripts/
-    └── your_script.py
+│   └── notebooks
+│   └── functions
+│   └──
+│   └──
+└── outputfiles/
+    └── csvs
+│   └── figures
+│   └──
+│   └──
+│   └──
 ```
 
 ### 1. **`data/`** 
 This folder contains the raw data files necessary for the project. It is organized into the following subfolders:
 
-- **`population/`**: Contains datasets related to population statistics and demographics.
-- **`ghsl/`**: Contains data from the Global Human Settlement Layer (GHSL), which includes various geographic and urbanization metrics.
-- **`osm/`**: Contains OpenStreetMap data for geographic features and information.
+- **`population/`**: Contains datasets related to population forecasts for each decade and socio-demographics attributes.
+- **`ghsl/`**: Contains data from the Global Human Settlement Layer (GHSL), which includes built up volume, surface and Nonresidentual volume and surface aggregated to city level.
+- **`osm/`**: Contains data extracted from OpenStreetMap data for cities in each state.
 
 ### 2. **`scripts/`**
-This folder contains all the Python (or other language) scripts that are used for processing, analyzing, and visualizing the data. The scripts should be run in the appropriate environment with necessary dependencies installed.
+This folder contains all the Python (or R) scripts that are used for processing, analyzing, and visualizing the data. The scripts should be run in the appropriate environment with necessary dependencies installed.
 
 ### 3. **`outputfiles/`**
 This folder holds the results generated from the scripts. It is divided into two subfolders:
