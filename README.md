@@ -9,6 +9,13 @@ Notes abour scripts:
 - Final output dataset with per capita residential built volume (m3) and roadway length (m) at every decade time interval for scenario SSP 2 [df_ssp2_final.xlsx](https://github.com/usutradhar/quantify-infrastructure/blob/main/df_ssp2_final.xlsx)
 - Remaining files are for plotting and summarizing the analysis results
 
+project/
+│
+├── data/
+│   └── als.csv
+│
+└── scripts/
+    └── your_script.py
 
 
 ### 1. **`data/`** 
