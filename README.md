@@ -37,9 +37,12 @@ project_QI/
 ### 1. **`data/`** 
 This folder contains the raw data files necessary for the project. It is organized into the following subfolders:
 
-- **`population/`**: Contains datasets related to population forecasts for each decade and socio-demographics attributes.
 - **`ghsl/`**: Contains data from the Global Human Settlement Layer (GHSL), which includes built up volume, surface and Nonresidentual volume and surface aggregated to city level.
+- **`housing_data_ACS/`**: Contains data on household percentage and age from American Comminuty Survey (ACS) at place level.
 - **`osm/`**: Contains data extracted from OpenStreetMap data for cities in each state.
+- **`population/`**: Contains datasets related to population forecasts for each decade and socio-demographics attributes.
+- **`scripts_data_dowmload/`**: Contains scripts used to extract data grom GHSL and OSM databases.
+- **`tigerline_shapefiles/`**: Contains a combined shapefile of all US places for the year 2020.
 
 ### 2. **`scripts/`**
 This folder contains all the Python (or R) scripts that are used for processing, analyzing, and visualizing the data. The scripts should be run in the appropriate environment with necessary dependencies installed.
