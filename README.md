@@ -40,7 +40,7 @@ This folder contains the raw data files necessary for the project. It is organiz
 This folder contains all the Python (or R) scripts that are used for processing, analyzing, and visualizing the data. The scripts should be run in the appropriate environment with necessary dependencies installed.
 
 Notes abour scripts:
-- Residential built up volume (RBUV) is extracted from Google Earth Engine Code editor using [extract GHSL data.txt](https://github.com/usutradhar/quantify-infrastructure/blob/main/0%20extract%20GHSL%20data.txt) script summarized per city
+- **`extract GHSL data.txt`**: Residential built up volume (RBUV) is extracted from Google Earth Engine Code editor using summarized per city/place.
 - Roadway network length (RL) is extracted from OpenStreetMap and coverted to dataframes summarized by roadway type for cities using [0_read_OSM_2_streetsdf_final.ipynb] & [0_read_OSM_2_streetsdf_CFT_final.ipynb]
 - To measure current per capita RBUV and projcet future RBUV per decade based on population trends: [readGHSLData_volume_ssp2.ipynb](https://github.com/usutradhar/quantify-infrastructure/blob/main/readGHSLData_volume_ssp2.ipynb)
 - To measure current per capita RL and projcet future RL per decade based on population trends [readRoadsPerCap_ssp2 copy.ipynb](https://github.com/usutradhar/quantify-infrastructure/blob/main/readRoadsPerCap_ssp2%20copy.ipynb)
