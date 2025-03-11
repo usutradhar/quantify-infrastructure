@@ -1,5 +1,5 @@
 # quantify-infrastructure
-Quantifying the available housing, roadway and waterpipes in the U.S. cities in terms of volume / length
+Quantifying the residential builtup volume and local roadways in the U.S. cities in terms of volume / length
 
 ```bash
 project_QI/
