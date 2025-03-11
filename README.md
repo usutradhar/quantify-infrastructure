@@ -43,8 +43,8 @@ Notes abour scripts:
 - **`extract GHSL data.txt`**: Residential built up volume (RBUV) is extracted from Google Earth Engine Code editor using summarized per city/place.
 - **`0_read_OSM_2_streetsdf_final.ipynb/0_read_OSM_2_streetsdf_CFT_final.ipynb`**: Roadway network length (RL) is extracted from OpenStreetMap and coverted to dataframes summarized by roadway type for cities.
 - **`readGHSLData_volume_ssp2.ipynb`**: To measure current per capita RBUV and projcet future RBUV per decade based on population.
-- **`readRoadsPerCap_ssp2 copy.ipyn`**:To measure current per capita RL and projcet future RL per decade based on population trends.
-- Remaining files are for plotting and summarizing the analysis results
+- **`readRoadsPerCap_ssp2.ipynb`**:To measure current per capita RL and projcet future RL per decade based on population.
+- Remaining files are for plotting and summarizing the analysis results.
 
 ### 3. **`outputfiles/`**
 This folder holds the results generated from the scripts. It is divided into two subfolders:
