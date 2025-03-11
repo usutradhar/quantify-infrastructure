@@ -57,10 +57,9 @@ This folder holds the results generated from the scripts. It is divided into two
 
 ### Prerequisites
 Before running the scripts, make sure to have the following installed:
-- Python (version X.X or above)
-- Required libraries (listed in requirements.txt or specified in the script comments)
-- Open conda prompt
-- To install all dependencies run
+- Python (version 3.12)
+- Required libraries (listed in QIEnvBkp.txt)
+- To run the environemnt with all dependencies 
     ```bash
     install mamba create --name myEnvRestored --file QIEnvBkp.txt
 
