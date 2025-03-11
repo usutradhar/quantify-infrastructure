@@ -61,7 +61,8 @@ Before running the scripts, make sure to have the following installed:
 - Required libraries (listed in QIEnvBkp.txt)
 - To run the environemnt with all dependencies 
     ```bash
-    install mamba create --name myEnvRestored --file QIEnvBkp.txt
+    install mamba create --name myEnvName --file QIEnvBkp.txt
+    mamba active myEnvName
 
 ### Running the Scripts
 1. Navigate to the `scripts/` folder.
