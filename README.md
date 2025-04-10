@@ -74,11 +74,28 @@ Before running the scripts, make sure to have the following installed:
 - Required libraries (listed in QIEnvBkp.txt)
 - To run the environemnt with all dependencies 
     ```bash
-    install mamba create --name myEnvName --file QIEnvBkp.txt
-    mamba active myEnvName
+    install mamba create --name projectQI --file QIEnvBkp.txt
+    mamba active projectQI
 
 ### Running the Scripts
 1. Navigate to the `scripts/` folder.
-2. Run the desired script using the following command:
+2. To run the project follow the sequence:
+   Open the code editor
+   Make sure the projectQI environment is activated
+   Run
+   readGHSLData_volume_ssp2.ipynb
+   readRoadsPerCap_ssp2.ipynb
+   readGHSLData_volume_ssp.ipynb
+   readRoadsPerCap_ssp1.ipynb
+   readGHSLData_volume_ssp4.ipynb
+   readRoadsPerCap_ssp4.ipynb
+   perCapInfra_stats_clean.ipynb
+   quantify_burden.ipynb
+   plot_density-distn.ipynb
+   plot_burdenExtent.ipynb
+   To get the GIF plot, first the plots are generated using RStudio using the script ggdensity_plots.R
+   Then they are compiled together using the script plot_gifs.ipynb
+   
+   
    ```bash
    python script_name.py
