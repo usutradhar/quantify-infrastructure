@@ -3,7 +3,7 @@ Quantifying the residential builtup volume and local roadways in the U.S. cities
 
 ```bash
 project_QI/
-│
+
 ├── data/
     └── ghsl
     └── housing_data_ACS
@@ -13,16 +13,16 @@ project_QI/
     └── tigerline_shapefiles
     └── cartographic_bounds
   
-└── scripts/
-│   └── functions
+├── scripts/
+    └── functions
         └── functions_scaling.py
         └── plot_maps.py
         └── processing_functions.py
-|   └── scenarios
+    └── scenarios
         └── ssp1 (Fits urban scaling laws to SSP1 population projections to get future RBUV and RL)
         └── ssp2 (Fits urban scaling laws to SSP2 population projections to get future RBUV and RL)
         └── ssp4 (Fits urban scaling laws to SSP4 population projections to get future RBUV and RL)
-|   └── plots_stats
+    └── plots_stats
         └── perCapInfra_stats_clean.ipynb
         └── quantify_burden.ipynb
         └── plot_density-distn.ipynb
@@ -32,11 +32,11 @@ project_QI/
         └── plot_funcs.py
         └──
         └──
-└── outputfiles/
+├── outputfiles/
     └── csvs
         (contains all the outputs generated in csv format)
-│   └── figures
-│   
+    └── figures
+   
 ```
 
 ### 1. **`data/`** 
