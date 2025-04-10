@@ -14,7 +14,15 @@ project_QI/
 │   └── 
 │
 └── scripts/
-│   └── notebooks
+│   └── functions
+        └── functions_scaling.py
+        └──
+        └── 
+|   └── scenarios
+        └── ssp1
+        └── ssp2
+        └── ssp4
+    └── plots_stats
 │   └── functions
 │   └──
 │   └──
