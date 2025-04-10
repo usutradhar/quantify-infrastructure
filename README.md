@@ -5,33 +5,38 @@ Quantifying the residential builtup volume and local roadways in the U.S. cities
 project_QI/
 │
 ├── data/
-│   └── ghsl
-│   └── housing_data_ACS
-│   └── osm
-│   └── population
-│   └── scripts_data_dowmload
-│   └── tigerline_shapefiles
-│   └── 
-│
+    └── ghsl
+    └── housing_data_ACS
+    └── osm
+    └── population
+    └── scripts_data_dowmload
+    └── tigerline_shapefiles
+    └── cartographic_bounds
+  
 └── scripts/
 │   └── functions
         └── functions_scaling.py
-        └──
-        └── 
+        └── plot_maps.py
+        └── processing_functions.py
 |   └── scenarios
-        └── ssp1
-        └── ssp2
-        └── ssp4
-    └── plots_stats
-│   └── functions
-│   └──
-│   └──
+        └── ssp1 (Fits urban scaling laws to SSP1 population projections to get future RBUV and RL)
+        └── ssp2 (Fits urban scaling laws to SSP2 population projections to get future RBUV and RL)
+        └── ssp4 (Fits urban scaling laws to SSP4 population projections to get future RBUV and RL)
+|   └── plots_stats
+        └── perCapInfra_stats_clean.ipynb
+        └── quantify_burden.ipynb
+        └── plot_density-distn.ipynb
+        └── plot_burdenExtent.ipynb
+        └── plot_gifs.ipynb
+        └── get_df_ssp.py
+        └── plot_funcs.py
+        └──
+        └──
 └── outputfiles/
     └── csvs
+        (contains all the outputs generated in csv format)
 │   └── figures
-│   └──
-│   └──
-│   └──
+│   
 ```
 
 ### 1. **`data/`** 
