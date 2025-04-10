@@ -82,7 +82,9 @@ Before running the scripts, make sure to have the following installed:
 2. To run the project follow the sequence:
    Open the code editor
    Make sure the projectQI environment is activated
-   Run
+   Run  
+   
+   ```bash
    readGHSLData_volume_ssp2.ipynb \   
    readRoadsPerCap_ssp2.ipynb
    readGHSLData_volume_ssp.ipynb
@@ -95,7 +97,4 @@ Before running the scripts, make sure to have the following installed:
    plot_burdenExtent.ipynb
    To get the GIF plot, first the plots are generated using RStudio using the script ggdensity_plots.R
    Then they are compiled together using the script plot_gifs.ipynb
-   
-   
-   ```bash
    python script_name.py
