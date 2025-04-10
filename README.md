@@ -83,7 +83,7 @@ Before running the scripts, make sure to have the following installed:
    Open the code editor
    Make sure the projectQI environment is activated
    Run
-   readGHSLData_volume_ssp2.ipynb
+   readGHSLData_volume_ssp2.ipynb \   
    readRoadsPerCap_ssp2.ipynb
    readGHSLData_volume_ssp.ipynb
    readRoadsPerCap_ssp1.ipynb
