@@ -85,7 +85,7 @@ Before running the scripts, make sure to have the following installed:
    Run  
    
    ```bash
-   readGHSLData_volume_ssp2.ipynb \   
+   readGHSLData_volume_ssp2.ipynb
    readRoadsPerCap_ssp2.ipynb
    readGHSLData_volume_ssp.ipynb
    readRoadsPerCap_ssp1.ipynb
@@ -95,6 +95,8 @@ Before running the scripts, make sure to have the following installed:
    quantify_burden.ipynb
    plot_density-distn.ipynb
    plot_burdenExtent.ipynb
+
+
    To get the GIF plot, first the plots are generated using RStudio using the script ggdensity_plots.R
    Then they are compiled together using the script plot_gifs.ipynb
    python script_name.py
