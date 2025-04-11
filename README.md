@@ -18,18 +18,14 @@ project_QI/
         └── plot_maps.py
         └── processing_functions.py
     └── scenarios
-        (Fits urban scaling laws to SSP1, SSP2 and SSP4 population projections to get future RBUV and RL)
-        └── process files process RBUV and RL data
-        └── project files project RBUV and RL for three SSP scenarios upto 2100 at each decade interval
     └── plots_stats
-        (shows the anlaysis outcomes as jupyter notebooks)
         └── perCapInfra_stats_clean.ipynb
         └── quantify_burden.ipynb
         └── plot_density-distn.ipynb
         └── plot_burdenExtent.ipynb
         └── plot_gifs.ipynb
-        └── get_df_ssp.py (combines analysis outputs for the three SSP sceanrios)
-        └── plot_funcs.py (creates frequently used plots)
+        └── get_df_ssp.py
+        └── plot_funcs.py 
 ├── outputfiles/
     └── csvs
         (contains all the outputs generated in csv format)
@@ -53,7 +49,7 @@ Notes abour **`scripts_data_dowmload`**:
 - **`0_read_OSM_2_streetsdf_final.ipynb/0_read_OSM_2_streetsdf_CFT_final.ipynb`**: Roadway network length (RL) is extracted from OpenStreetMap and coverted to dataframes summarized by roadway type for cities.
 This data extraction process takes some time and the files are too big. Therefore, only processed input files have been provided in the data folder.
 To extract data for a single place,
-unit data for built up volume can be accessed using this file: `**https://code.earthengine.google.com/31f072870e93ccad4fb8f0e1b6f4efb3`**
+unit data for built up volume can be accessed using this file: **`https://code.earthengine.google.com/31f072870e93ccad4fb8f0e1b6f4efb3`**
 unit data for built up volume can be accessed using this file: **`unit_read_OSM_2_streetsdf.ipynb`**
 
 ### 2. **`scripts/`**
