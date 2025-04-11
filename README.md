@@ -52,7 +52,9 @@ Notes abour **`scripts_data_dowmload`**:
 - **`extract GHSL data.txt`**: Residential built up volume (RBUV) is extracted from Google Earth Engine Code editor using summarized per city/place.
 - **`0_read_OSM_2_streetsdf_final.ipynb/0_read_OSM_2_streetsdf_CFT_final.ipynb`**: Roadway network length (RL) is extracted from OpenStreetMap and coverted to dataframes summarized by roadway type for cities.
 This data extraction process takes some time and the files are too big. Therefore, only processed input files have been provided in the data folder.
-To extract data for a single place, unit data download codes have been provided as **`unit extract GHSL data.txt`** and **`unit_read_OSM_2_streetsdf.ipynb`**.
+To extract data for a single place,
+unit data for built up volume can be accessed using this file: `**https://code.earthengine.google.com/31f072870e93ccad4fb8f0e1b6f4efb3`**
+unit data for built up volume can be accessed using this file: **`unit_read_OSM_2_streetsdf.ipynb`**
 
 ### 2. **`scripts/`**
 This folder contains all the Python (or R) scripts that are used for processing, analyzing, and visualizing the data. The scripts should be run in the appropriate environment with necessary dependencies installed.
@@ -63,7 +65,7 @@ scenarios: Fits urban scaling laws to SSP1, SSP2 and SSP4 population projections
          ── project files project RBUV and RL for three SSP scenarios upto 2100 at each decade interval                 \
 plots_stats: Shows the anlaysis outcomes as jupyter notebooks                                                           \
          ── get_df_ssp.py (combines analysis outputs for the three SSP sceanrios)                                       \
-         ── plot_funcs.py (creates frequently used plots)                                                               \
+         ── plot_funcs.py (creates frequently used plots)                                                               
 
 ### 3. **`outputfiles/`**
 This folder holds the results generated from the scripts. It is divided into two subfolders:
