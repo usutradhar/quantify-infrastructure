@@ -28,7 +28,7 @@ project_QI/
         └── plot_funcs.py 
 ├── outputfiles/
     └── csvs
-        (contains all the outputs generated in csv format)
+        (contains all the output csv files)
     └── figures
         (contains all the output figures)
    
@@ -87,19 +87,19 @@ See imported packages: conda list
 Activate the environment to export: conda activate <env_name> 
 ### Running the Scripts
 1. Navigate to the `scripts/` folder.
-2. To run the project follow the sequence:
-   Open the code editor
-   Make sure the projectQI environment is activated
-   Run  
-   
+2. To run the project, make sure the projectQI environment is activated. Inside the environment, run   
    ```bash
-   main_run.ipynb  # to get future per capita RBUV and RL values for SSP1, SSP2 and SSP3 scenarios
+   main.py  # to get future per capita RBUV and RL values for SSP1, SSP2 and SSP3 scenarios
+   ```
+
+   To generate the figures and compare analysis results:
+
+   ```bash
    perCapInfra_stats_clean.ipynb
    quantify_burden.ipynb
    plot_density-distn.ipynb
    plot_burdenExtent.ipynb
    ```
 
-   To get the GIF plot, first the plots are generated using RStudio using the script ggdensity_plots.R
-   Then they are compiled together using the script plot_gifs.ipynb
-   python script_name.py
+   To get the GIF plot, first the plots are generated using RStudio using the script **`ggdensity_plots.R`**.
+   Then they are compiled together using the script **`plot_gifs.ipynb`**
