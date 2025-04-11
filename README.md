@@ -72,29 +72,31 @@ This folder holds the results generated from the scripts. It is divided into two
 - **`DD_df_ssp2_clean`**: Data dictionary for **`df_ssp2_clean.csv`**
   
 
-## To rub the analysis in local machines:
+## To run the analysis in local machines:
 
 ### Prerequisites
 Before running the scripts, make sure to have the following installed:
 - Python (version 3.12)
-- Required libraries (listed in QIEnvBkp.txt)
-- To run the environemnt with all dependencies 
-    ```bash
-    install mamba create --name projectQI --file env_requirements.txt
-    mamba active projectQI
-Import packages to your environment and create conda environment
-conda env create -f environment.yml
-See imported packages: conda list
+- Required libraries (listed in env_requirements.txt, also provided as environment.yml)
 
-Activate the environment to export: conda activate <env_name> 
-### Running the Scripts
-1. To run the project, make sure the projectQI environment is activated. Inside the environment, run   
+### Run the model
+- To run the environemnt with all dependencies inside conda
+- Download the projectQI folder
+- Navigate to the `scripts/`
+- Open the teminal/ command prompt for conda
+    ```bash
+    conda env create -f environment.yml
+    conda active projectQI
+    ```
+- Installing the envirnment take some time (10-15 minutes)
+- To run the project, make sure the projectQI environment is activated. Inside the environment, run   
    ```bash
    main.py  # to get future per capita RBUV and RL values for SSP1, SSP2 and SSP3 scenarios
    ```
-   It takes ~45 minutes to run three scerarios for RBUV and RL.
+It takes ~45 minutes to run three scerarios for RBUV and RL.
 
-2. To generate the figures and compare analysis results, Navigate to the `scripts/plots_stats` folder
+### Generate the figures and compare analysis results
+- Navigate to the `scripts/plots_stats` folder
 
    ```bash
    perCapInfra_stats_clean.ipynb
@@ -102,5 +104,4 @@ Activate the environment to export: conda activate <env_name>
    plot_density-distn.ipynb
    plot_burdenExtent.ipynb
    ```
-
    To get the temporal change in burden with population threshold, prepare data using `process_data_ggdensityR.ipynb` and run the script `ggdensity_plots.R` in RStudio.
