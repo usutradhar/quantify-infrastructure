@@ -101,5 +101,4 @@ Activate the environment to export: conda activate <env_name>
    plot_burdenExtent.ipynb
    ```
 
-   To get the GIF plot, first the plots are generated using RStudio using the script **`ggdensity_plots.R`**.
-   Then they are compiled together using the script **`plot_gifs.ipynb`**
+   To get the temporal change in burden with population threshold, prepare data using `process_data_ggdensityR.ipynb` and run the script **`ggdensity_plots.R`** in RStudio.
