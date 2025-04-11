@@ -57,13 +57,13 @@ To extract data for a single place, unit data download codes have been provided 
 ### 2. **`scripts/`**
 This folder contains all the Python (or R) scripts that are used for processing, analyzing, and visualizing the data. The scripts should be run in the appropriate environment with necessary dependencies installed.
 
-functions: Contains the functions for initial data processing before analysis and function to fit urban scaling law 
-scenarios: Fits urban scaling laws to SSP1, SSP2 and SSP4 population projections to get future RBUV and RL
-         ── process files process RBUV and RL data
-         ── project files project RBUV and RL for three SSP scenarios upto 2100 at each decade interval
-plots_stats: Shows the anlaysis outcomes as jupyter notebooks
-         ── get_df_ssp.py (combines analysis outputs for the three SSP sceanrios)
-         ── plot_funcs.py (creates frequently used plots)
+functions: Contains the functions for initial data processing before analysis and function to fit urban scaling law     \
+scenarios: Fits urban scaling laws to SSP1, SSP2 and SSP4 population projections to get future RBUV and RL              \
+         ── process files process RBUV and RL data                                                                      \
+         ── project files project RBUV and RL for three SSP scenarios upto 2100 at each decade interval                 \
+plots_stats: Shows the anlaysis outcomes as jupyter notebooks                                                           \
+         ── get_df_ssp.py (combines analysis outputs for the three SSP sceanrios)                                       \
+         ── plot_funcs.py (creates frequently used plots)                                                               \
 
 ### 3. **`outputfiles/`**
 This folder holds the results generated from the scripts. It is divided into two subfolders:
