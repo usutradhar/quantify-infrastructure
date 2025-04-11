@@ -18,10 +18,9 @@ project_QI/
         └── functions_scaling.py
         └── plot_maps.py
         └── processing_functions.py
-    └── scenarios
-        └── ssp1 (Fits urban scaling laws to SSP1 population projections to get future RBUV and RL)
-        └── ssp2 (Fits urban scaling laws to SSP2 population projections to get future RBUV and RL)
-        └── ssp4 (Fits urban scaling laws to SSP4 population projections to get future RBUV and RL)
+    └── scenarios (Fits urban scaling laws to SSP1, SSP2 and SSP4 population projections to get future RBUV and RL)
+        └── process files process RBUV and RL data
+        └── project files project RBUV and RL for three SSP scenarios upto 2100 at each decade interval
     └── plots_stats
         └── perCapInfra_stats_clean.ipynb
         └── quantify_burden.ipynb
@@ -30,8 +29,6 @@ project_QI/
         └── plot_gifs.ipynb
         └── get_df_ssp.py
         └── plot_funcs.py
-        └──
-        └──
 ├── outputfiles/
     └── csvs
         (contains all the outputs generated in csv format)
@@ -55,7 +52,9 @@ This folder contains all the Python (or R) scripts that are used for processing,
 Notes abour scripts:
 - **`extract GHSL data.txt`**: Residential built up volume (RBUV) is extracted from Google Earth Engine Code editor using summarized per city/place.
 - **`0_read_OSM_2_streetsdf_final.ipynb/0_read_OSM_2_streetsdf_CFT_final.ipynb`**: Roadway network length (RL) is extracted from OpenStreetMap and coverted to dataframes summarized by roadway type for cities.
-- **`readGHSLData_volume_ssp2.ipynb`**: To measure current per capita RBUV and projcet future RBUV per decade based on population.
+- **`process_RBUV_data.py`**: To measure current per capita RBUV and projcet future RBUV per decade based on population.
+
+
 - **`readRoadsPerCap_ssp2.ipynb`**:To measure current per capita RL and projcet future RL per decade based on population.
 - Remaining files are for plotting and summarizing the analysis results.
 
@@ -74,9 +73,13 @@ Before running the scripts, make sure to have the following installed:
 - Required libraries (listed in QIEnvBkp.txt)
 - To run the environemnt with all dependencies 
     ```bash
-    install mamba create --name projectQI --file QIEnvBkp.txt
+    install mamba create --name projectQI --file env_requirements.txt
     mamba active projectQI
+Import packages to your environment and create conda environment
+conda env create -f environment.yml
+See imported packages: conda list
 
+Activate the environment to export: conda activate <env_name> 
 ### Running the Scripts
 1. Navigate to the `scripts/` folder.
 2. To run the project follow the sequence:
@@ -85,12 +88,7 @@ Before running the scripts, make sure to have the following installed:
    Run  
    
    ```bash
-   readGHSLData_volume_ssp2.ipynb
-   readRoadsPerCap_ssp2.ipynb
-   readGHSLData_volume_ssp.ipynb
-   readRoadsPerCap_ssp1.ipynb
-   readGHSLData_volume_ssp4.ipynb
-   readRoadsPerCap_ssp4.ipynb
+   main_run.ipynb to get future per capita RBUV and RL values for SSP1, SSP2 and SSP3 scenarios
    perCapInfra_stats_clean.ipynb
    quantify_burden.ipynb
    plot_density-distn.ipynb
