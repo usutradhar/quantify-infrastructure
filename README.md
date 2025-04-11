@@ -88,7 +88,9 @@ Activate the environment to export: conda activate <env_name>
    Run  
    
    ```bash
-   main_run.ipynb to get future per capita RBUV and RL values for SSP1, SSP2 and SSP3 scenarios
+   main_run.ipynb
+
+   to get future per capita RBUV and RL values for SSP1, SSP2 and SSP3 scenarios
    perCapInfra_stats_clean.ipynb
    quantify_burden.ipynb
    plot_density-distn.ipynb
