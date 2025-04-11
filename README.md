@@ -60,8 +60,8 @@ scenarios: Fits urban scaling laws to SSP1, SSP2 and SSP4 population projections
          ── process files process RBUV and RL data                                                                      \
          ── project files project RBUV and RL for three SSP scenarios upto 2100 at each decade interval                 \
 plots_stats: Shows the anlaysis outcomes as jupyter notebooks                                                           \
-         ── get_df_ssp.py (combines analysis outputs for the three SSP sceanrios)                                       \
-         ── plot_funcs.py (creates frequently used plots)                                                               
+         ── `get_df_ssp.py` (combines analysis outputs for the three SSP sceanrios)                                     \
+         ── `plot_funcs.py` (creates frequently used plots)                                                               
 
 ### 3. **`outputfiles/`**
 This folder holds the results generated from the scripts. It is divided into two subfolders:
@@ -101,4 +101,4 @@ Activate the environment to export: conda activate <env_name>
    plot_burdenExtent.ipynb
    ```
 
-   To get the temporal change in burden with population threshold, prepare data using `process_data_ggdensityR.ipynb` and run the script **`ggdensity_plots.R`** in RStudio.
+   To get the temporal change in burden with population threshold, prepare data using `process_data_ggdensityR.ipynb` and run the script `ggdensity_plots.R` in RStudio.
