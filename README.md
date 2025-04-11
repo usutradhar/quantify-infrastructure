@@ -77,7 +77,7 @@ This folder holds the results generated from the scripts. It is divided into two
 ### Prerequisites
 Before running the scripts, make sure to have the following installed:
 - Python (version 3.12)
-- Required libraries (listed in env_requirements.txt, also provided as environment.yml)
+- Required libraries (listed in `env_requirements.txt`, also provided as `environment.yml`)
 
 ### Run the model
 - To run the environemnt with all dependencies inside conda
