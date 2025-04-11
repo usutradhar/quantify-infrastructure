@@ -92,7 +92,7 @@ Activate the environment to export: conda activate <env_name>
    ```
    It takes ~45 minutes to run three scerarios for RBUV and RL.
 
-2. To generate the figures and compare analysis results, Navigate to the `scripts/` folder
+2. To generate the figures and compare analysis results, Navigate to the `scripts/plots_stats` folder
 
    ```bash
    perCapInfra_stats_clean.ipynb
