@@ -1,5 +1,6 @@
 # quantify-infrastructure
-Quantifying the residential builtup volume and local roadways in the U.S. cities in terms of volume / length
+This project quantifies the residential built up volume and loacl roadway length for U.S. cities and project upto 2100 to measure the infrastructure burden.
+The data and analysis for the project is organized as follows:
 
 ```bash
 project_QI/
@@ -11,33 +12,36 @@ project_QI/
     └── population
     └── scripts_data_dowmload
     └── tigerline_shapefiles
-    └── cartographic_bounds
-  
+├── raw_data_exttraction/
+    contains the codes to extarct place-level built up volume data and roadway length data
 ├── scripts/
     └── functions
         └── functions_scaling.py
         └── plot_maps.py
         └── processing_functions.py
-    └── scenarios (Fits urban scaling laws to SSP1, SSP2 and SSP4 population projections to get future RBUV and RL)
+    └── scenarios
+        (Fits urban scaling laws to SSP1, SSP2 and SSP4 population projections to get future RBUV and RL)
         └── process files process RBUV and RL data
         └── project files project RBUV and RL for three SSP scenarios upto 2100 at each decade interval
     └── plots_stats
+        (shows the anlaysis outcomes as jupyter notebooks)
         └── perCapInfra_stats_clean.ipynb
         └── quantify_burden.ipynb
         └── plot_density-distn.ipynb
         └── plot_burdenExtent.ipynb
         └── plot_gifs.ipynb
-        └── get_df_ssp.py
-        └── plot_funcs.py
+        └── get_df_ssp.py (combines analysis outputs for the three SSP sceanrios)
+        └── plot_funcs.py (creates frequently used plots)
 ├── outputfiles/
     └── csvs
         (contains all the outputs generated in csv format)
     └── figures
+        (contains all the output figures)
    
 ```
 
 ### 1. **`data/`** 
-This folder contains the raw data files necessary for the project. It is organized into the following subfolders:
+This folder contains the raw data files necessary for the analysis. It is organized into the following subfolders:
 
 - **`ghsl/`**: Contains data from the Global Human Settlement Layer (GHSL), which includes built up volume, surface and Nonresidentual volume and surface aggregated to city level.
 - **`housing_data_ACS/`**: Contains data on household percentage and age from American Comminuty Survey (ACS) at place level.
@@ -49,14 +53,9 @@ This folder contains the raw data files necessary for the project. It is organiz
 ### 2. **`scripts/`**
 This folder contains all the Python (or R) scripts that are used for processing, analyzing, and visualizing the data. The scripts should be run in the appropriate environment with necessary dependencies installed.
 
-Notes abour scripts:
+Notes abour **`raw_data_exttraction`** scripts:
 - **`extract GHSL data.txt`**: Residential built up volume (RBUV) is extracted from Google Earth Engine Code editor using summarized per city/place.
 - **`0_read_OSM_2_streetsdf_final.ipynb/0_read_OSM_2_streetsdf_CFT_final.ipynb`**: Roadway network length (RL) is extracted from OpenStreetMap and coverted to dataframes summarized by roadway type for cities.
-- **`process_RBUV_data.py`**: To measure current per capita RBUV and projcet future RBUV per decade based on population.
-
-
-- **`readRoadsPerCap_ssp2.ipynb`**:To measure current per capita RL and projcet future RL per decade based on population.
-- Remaining files are for plotting and summarizing the analysis results.
 
 ### 3. **`outputfiles/`**
 This folder holds the results generated from the scripts. It is divided into two subfolders:
