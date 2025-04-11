@@ -86,14 +86,13 @@ See imported packages: conda list
 
 Activate the environment to export: conda activate <env_name> 
 ### Running the Scripts
-1. Navigate to the `scripts/` folder.
-2. To run the project, make sure the projectQI environment is activated. Inside the environment, run   
+1. To run the project, make sure the projectQI environment is activated. Inside the environment, run   
    ```bash
    main.py  # to get future per capita RBUV and RL values for SSP1, SSP2 and SSP3 scenarios
    ```
    It takes ~45 minutes to run three scerarios for RBUV and RL.
 
-   To generate the figures and compare analysis results:
+2. To generate the figures and compare analysis results, Navigate to the `scripts/` folder
 
    ```bash
    perCapInfra_stats_clean.ipynb
