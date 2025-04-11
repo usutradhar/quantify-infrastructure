@@ -12,8 +12,6 @@ project_QI/
     └── population
     └── scripts_data_dowmload
     └── tigerline_shapefiles
-├── raw_data_exttraction/
-    contains the codes to extarct place-level built up volume data and roadway length data
 ├── scripts/
     └── functions
         └── functions_scaling.py
@@ -49,13 +47,15 @@ This folder contains the raw data files necessary for the analysis. It is organi
 - **`population/`**: Contains datasets related to population forecasts for each decade and socio-demographics attributes.
 - **`scripts_data_dowmload/`**: Contains scripts used to extract data grom GHSL and OSM databases.
 - **`tigerline_shapefiles/`**: Contains a combined shapefile of all US places for the year 2020.
+- 
+Notes abour **`scripts_data_dowmload`**:
+- **`extract GHSL data.txt`**: Residential built up volume (RBUV) is extracted from Google Earth Engine Code editor using summarized per city/place.
+- **`0_read_OSM_2_streetsdf_final.ipynb/0_read_OSM_2_streetsdf_CFT_final.ipynb`**: Roadway network length (RL) is extracted from OpenStreetMap and coverted to dataframes summarized by roadway type for cities.
+This data extraction process takes some time and the files are too big. Therefore, only processed input files have been provided in the data folder.
+To extract data for a single place, unit data download codes have been provided as **`unit extract GHSL data.txt`** and **`unit_read_OSM_2_streetsdf.ipynb`**.
 
 ### 2. **`scripts/`**
 This folder contains all the Python (or R) scripts that are used for processing, analyzing, and visualizing the data. The scripts should be run in the appropriate environment with necessary dependencies installed.
-
-Notes abour **`raw_data_exttraction`** scripts:
-- **`extract GHSL data.txt`**: Residential built up volume (RBUV) is extracted from Google Earth Engine Code editor using summarized per city/place.
-- **`0_read_OSM_2_streetsdf_final.ipynb/0_read_OSM_2_streetsdf_CFT_final.ipynb`**: Roadway network length (RL) is extracted from OpenStreetMap and coverted to dataframes summarized by roadway type for cities.
 
 ### 3. **`outputfiles/`**
 This folder holds the results generated from the scripts. It is divided into two subfolders:
@@ -64,7 +64,7 @@ This folder holds the results generated from the scripts. It is divided into two
 - **`csvs/`**: Contains the CSV files with processed data or output generated from the analysis.
 - - **`df_ssp2_final.xlsx`**:Final output dataset with per capita residential built volume (m3) and roadway length (m) at every decade time interval for scenario SSP 2.
 
-## Usage
+## To rub the analysis in local machines:
 
 ### Prerequisites
 Before running the scripts, make sure to have the following installed:
@@ -87,9 +87,7 @@ Activate the environment to export: conda activate <env_name>
    Run  
    
    ```bash
-   main_run.ipynb
-
-   to get future per capita RBUV and RL values for SSP1, SSP2 and SSP3 scenarios
+   main_run.ipynb  # to get future per capita RBUV and RL values for SSP1, SSP2 and SSP3 scenarios
    perCapInfra_stats_clean.ipynb
    quantify_burden.ipynb
    plot_density-distn.ipynb
