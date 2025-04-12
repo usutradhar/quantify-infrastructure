@@ -92,10 +92,9 @@ Installing the envirnment take some time (15-20 minutes)
 - To run the project:
 - Open terminal
 - Navigate to the `projectQI` folder
-- Inside the environment, run 
    ```bash
-   drive/projectQI>> conda active env_projectQI
-   drive/projectQI>> pyton main.py  # to get future per capita RBUV and RL values for SSP1, SSP2 and SSP3 scenarios
+   conda active env_projectQI
+   pyton main.py  # to get future per capita RBUV and RL values for SSP1, SSP2 and SSP3 scenarios
    ```
 It takes ~45 minutes to run three scerarios for RBUV and RL.
 
