@@ -77,7 +77,7 @@ This folder holds the results generated from the scripts. It is divided into two
 ### Prerequisites
 Before running the scripts, make sure to have the following installed:
 - Python (version 3.12)
-- Required libraries (listed in `env_requirements.txt`, also provided as `environment.yml`)
+- Required libraries (listed in `requirements.txt`, also provided as `environment.yml`)
 
 ### Run the model
 - To run the environemnt with all dependencies inside conda
@@ -85,11 +85,11 @@ Before running the scripts, make sure to have the following installed:
 - Navigate to the `scripts/`
 - Open the teminal/ command prompt for conda
     ```bash
-    conda env create -f environment.yml
-    conda active projectQI
+    conda create --name env_porjectQI --file requirements.txt # conda create --name <env> --file <this file>
+    conda active env_projectQI
     ```
-- Installing the envirnment take some time (10-15 minutes)
-- To run the project, make sure the projectQI environment is activated. Inside the environment, run   
+- Installing the envirnment take some time (15-20 minutes)
+- To run the project, make sure the env_projectQI environment is activated. Inside the environment, run   
    ```bash
    main.py  # to get future per capita RBUV and RL values for SSP1, SSP2 and SSP3 scenarios
    ```
