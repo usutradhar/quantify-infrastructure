@@ -25,9 +25,9 @@ project_QI/
         └── get_df_ssp.py
         └── plot_funcs.py 
 ├── outputfiles/
-    └── outputs_beta_min (outputs from projections for scenario with minimum beta)
-    └── outputs_beta_mean (outputs from projections for scenario with mean beta)
-    └── outputs_beta_max (outputs from projections for scenario with maximum beta)
+    └── outputs_beta_min  (outputs from projections - minimum beta)
+    └── outputs_beta_mean (outputs from projections - mean beta)
+    └── outputs_beta_max  (outputs from projections - maximum beta)
     └── csvs
         (contains all the output csv files)
     └── figures
