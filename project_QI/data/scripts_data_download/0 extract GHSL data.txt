@@ -1,0 +1,128 @@
+// Load a FeatureCollection of regions of interest (shapefiles).
+var regionsofInterest = placesUS;
+print(regionsofInterest.first().getInfo());
+
+
+// Load input imagery: 
+var ghslS = ee.Image("JRC/GHSL/P2023A/GHS_BUILT_S/2020").select('built_surface');
+print(ghslS.getInfo());
+var myScale = ghslS.projection().nominalScale();
+print(myScale);
+// var visParams = {min: 0.0, max: 8000.0, palette: ['000000', 'FFFFFF']};
+// Map.addLayer(ghslS, visParams, 'Built-up surface [m2], 2020');
+
+// Check for some cities
+var cities = ['New York city', 'Yonkers city'];
+
+// Looping over the cities
+var featureBuilt = ee.FeatureCollection(cities.map(function(city){
+  // Filter feature collection to get city geometry
+  var roi = regionsofInterest.filter(ee.Filter.eq('NAMELSAD', city)).geometry();
+  var image = ghslS.clip(roi);
+  // Area pixel in Hectare
+  var areaPixel = ee.Image.pixelArea();
+  // Calculate city area
+  var area = ee.Number(areaPixel.rename('area').reduceRegion({
+    reducer: ee.Reducer.sum(),
+    geometry: roi,
+    scale: 100,
+   // bestEffort: true
+  }).get('area'));
+  print(city, ee.String('Total Land and Water Area: ').cat(area));
+  
+  return ee.Feature(null, {City: city, Area: area,});
+}));
+ 
+// Export.table.toDrive({
+//   collection: featureBuilt,
+//   selectors: ['City', 'Area'],
+//   description: 'ghslS_pixelArea_2020',
+//   folder: 'earthengine',
+//   fileNamePrefix: 'ghslS_pixelArea_2020',
+//   fileFormat: 'CSV',
+// });
+//  var pa = ee.Image.pixelArea().reproject({crs:'EPSG:4326',scale:30})
+
+// Add reducer output to the Features in the collection.
+var sum_built_area = ghslS.reduceRegions({
+  collection: regionsofInterest,
+  reducer: ee.Reducer.sum(),
+  scale: myScale,
+});
+// Print the first feature, to illustrate the result.
+// print(ee.Feature(sum_built_area.first()));
+
+Export.table.toDrive({
+  collection: sum_built_area,
+  selectors: ['STATEFP', 'GEOID', 'NAMELSAD', 'ALAND','AWATER', 'sum'],
+  description: 'BuiltArea_GHSL_S_2020',
+  folder: 'earthengine',
+  fileNamePrefix: 'BuiltArea_GHSL_S_nres_2020',
+  fileFormat: 'CSV',
+});
+
+var visParams = {
+  min: 0.0,
+  max: 30.0,
+  palette: ['000000', '400000', 'a00000', '00ffff'],
+};
+// Map.setCenter(-87, 41, 8);
+// Map.addLayer(image, visParams, 'Multitemporal built-up Surface');
+// Map.addLayer(regionsofInterest, {color: 'purple'}, 'FeatureCollection');
+
+// Load input imagery: 
+var ghslV = ee.Image("JRC/GHSL/P2023A/GHS_BUILT_V/2020").select('built_volume_total');
+print(ghslV.getInfo());
+var myScale = ghslV.projection().nominalScale();
+// print(myScale);
+var visParams = {min: 0,max: 80000,palette: ['000004', '51127c', 'b73779', 'fc8961', 'fcfdbf'],};
+
+Map.addLayer(ghslV, visParams, 'Total building volume [m3], 2020');
+
+// Add reducer output to the Features in the collection.
+var sum_built_vol = ghslV.reduceRegions({
+  collection: regionsofInterest,
+  reducer: ee.Reducer.sum(),
+  scale: myScale,
+});
+// Print the first feature, to illustrate the result.
+// print(ee.Feature(sum_built_vol.first()));
+
+Export.table.toDrive({
+  collection: sum_built_vol,
+  selectors: ['STATEFP', 'GEOID', 'NAMELSAD', 'ALAND','AWATER', 'sum'],
+  description: 'BuiltArea_GHSL_V_2020',
+  folder: 'earthengine',
+  fileNamePrefix: 'BuiltArea_GHSL_V_nres_2020',
+  fileFormat: 'CSV',
+});
+
+// Load input imagery: 
+var image_height = ee.Image("JRC/GHSL/P2023A/GHS_BUILT_H/2018").select('built_height');
+print(image_height.getInfo());
+var myScale = image_height.projection().nominalScale();
+// print(myScale);
+
+var vol_by_height = ghslV.divide(image_height);
+Map.addLayer(vol_by_height, {min: 0, max: 10000}, 'vol_by_height');
+
+// Add reducer output to the Features in the collection.
+var sum_built_vol_by_height = vol_by_height.reduceRegions({
+  collection: regionsofInterest,
+  reducer: ee.Reducer.sum(),
+  scale: myScale,
+});
+// Print the first feature, to illustrate the result.
+// print(ee.Feature(sum_built_vol.first()));
+
+Export.table.toDrive({
+  collection: sum_built_vol_by_height,
+  selectors: ['STATEFP', 'GEOID', 'NAMELSAD', 'ALAND','AWATER', 'sum'],
+  description: 'BuiltArea_GHSL_mean_height_2020',
+  folder: 'earthengine',
+  fileNamePrefix: 'BuiltArea_GHSL_mean_height_2020',
+  fileFormat: 'CSV',
+});
+
+// ============================================================================//
+
