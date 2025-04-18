@@ -111,21 +111,7 @@ def process_residential_builtup_volume_data():
 
     df_YearBuilt.columns
 
-    os.environ['USE_PYGEOS'] = '0'
-    # Import places map
-    import geopandas as gpd
-    places_US = gpd.read_file(r'data\tigerline_shapefiles\all_places\compiled.shp')
-    print('Total no of places in the US:===')
-    print(places_US.shape)
-    # Exclude states that do not have consistent data for roadways
-    places_50_states = places_US[(places_US['STATEFP'] != '02') & (places_US['STATEFP'] != '60') & (places_US['STATEFP'] != '66') & (places_US['STATEFP'] != '69') & (places_US['STATEFP'] != '72') & (places_US['STATEFP'] != '78')]
-    print('No of places in the 50 states:===')
-    print(places_50_states.shape)
-
-    df_with_geom = places_50_states.merge(df[['GEOID', 'surface_2020','surface_Res_2020', 'surface_nonRes_2020', 'volume_2020', 'volume_nonRes_2020', 'volume_Res_2020',
-                                            'height_building', 'floors']], on = 'GEOID')
-    df_with_geom.columns
-    df_with_geom = df_with_geom.to_crs('EPSG:9311')
+    df_with_geom = df.copy()
     print(df.shape, df_with_geom.shape)
 
     # Area of the place in sqkm
