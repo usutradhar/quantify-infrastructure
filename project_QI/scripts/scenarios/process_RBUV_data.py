@@ -111,19 +111,16 @@ def process_residential_builtup_volume_data():
 
     df_YearBuilt.columns
 
-    df_with_geom = df.copy()
-    print(df.shape, df_with_geom.shape)
-
     # Area of the place in sqkm
-    df_with_geom['landAreaSqkm'] = df_with_geom['ALAND']/1000000
+    df['landAreaSqkm'] = df['ALAND']/1000000
     # Percent of total area that has buildings
-    df_with_geom['percent_built_surface'] = df_with_geom['surface_2020'] * 100/df_with_geom['ALAND']
+    df['percent_built_surface'] = df['surface_2020'] * 100/df['ALAND']
 
-    df_with_geom.isna().sum().sum()
+    df.isna().sum().sum()
 
     """### Merge with surface-volume with HUs and age"""
 
-    df_buildings = df_with_geom.merge(df_YearBuilt_selected, on = 'GEOID')
+    df_buildings = df.merge(df_YearBuilt_selected, on = 'GEOID')
 
     # get an weighted age for each place
     df_buildings['weighted_avg_age'] = ((2024-1939)*df_buildings['YB_<=_1939'] + (2024-1950)*df_buildings['YB_1940_1959'] + (2024-1970)*df_buildings['YB_1960_1979'] +
@@ -347,13 +344,5 @@ def process_residential_builtup_volume_data():
     if anova_results['Pr(>F)'][1] < 0.005:
         print(f"Since {anova_results['Pr(>F)'][1]} < 0.005, difference is significant")
         print("Built seperate models")
-
-    ## Save the clean data to avoid the merging and combining again and again
-
-    # df_selected = df[['GEOID', 'TOTALAREA_SQKM_2020', 'surface', 'surface_1990', 'surface_1995', 'surface_2000', 'surface_2010', 'surface_2015', 'surface_2020',
-    #                    'surface_nonRes_2020','surface_Res_2020', 'volume', 'volume_1990', 'volume_1995', 'volume_2000', 'volume_2010', 'volume_2015', 'volume_2020', 'volume_nonRes_2020',
-    #                    'Vchange_80_90', 'Vchange_90_00', 'Vchange_00_10', 'Vchange_10_20', 'change_80_90', 'change_90_00', 'change_00_10', 'change_10_20']]
-
-    # df_selected.to_csv(r'outputfiles\csvs\GHSL_AREA_VOL_cleaned.csv')
 
     return building_with_pop
