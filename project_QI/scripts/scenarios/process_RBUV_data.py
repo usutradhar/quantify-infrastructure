@@ -170,12 +170,6 @@ def process_residential_builtup_volume_data():
                                                     'ssp42070', 'ssp42080', 'ssp42090', 'ssp42100']], on = 'GEOID', how='left')
 
     building_with_pop_all[building_with_pop_all['GEOID'].str.startswith('214800')][['GEOID', 'NAMELSAD','CensusPop_20', 'ssp22020', 'ssp22030', 'ssp22040', 'ssp22050']]
-    # 2010 Census
-    # Louisville/Jefferson County metro government (balance), Kentucky	597337
-    # 2020 Census
-    # Louisville city, Kentucky	246161
-    # Louisville/Jefferson County metro government (balance), Kentucky	386884
-    # 246161+386884 = 633045
 
     building_with_pop_all.shape, df_buildings.shape, df_population.shape, df_attributes.shape
 
@@ -240,6 +234,10 @@ def process_residential_builtup_volume_data():
 
     building_with_pop['city_type_order'] = building_with_pop['city type'].map({'urban': 1, 'suburban': 2, 'periurban': 3, 'rural': 4, 'not enough data': 5})
     building_with_pop['REGION_order'] = building_with_pop['REGION'].map({'Northeast': 1, 'Midwest': 2, 'West': 3, 'South': 4})
+
+    building_with_pop['STATEFP'] = building_with_pop['STATEFP'].astype(str).str.rjust(2,'0')
+    building_with_pop = building_with_pop[(building_with_pop['STATEFP'] != '02') & (building_with_pop['STATEFP'] != '60') & (building_with_pop['STATEFP'] != '66') & 
+                                      (building_with_pop['STATEFP'] != '69') & (building_with_pop['STATEFP'] != '72') & (building_with_pop['STATEFP'] != '78')]
 
     data = building_with_pop[building_with_pop['city type'] != 'not enough data']
 
