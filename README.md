@@ -11,11 +11,9 @@ project_QI/
     └── osm
     └── population
     └── scripts_data_dowmload
-    └── tigerline_shapefiles
 ├── scripts/
     └── functions
-        └── functions_scaling.py
-        └── plot_maps.py
+        └── functions_scaling_vect.py
         └── processing_functions.py
     └── scenarios
     └── plots_stats
