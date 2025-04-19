@@ -14,12 +14,13 @@ import time
 from scripts.functions.functions_scaling_vect import find_scale_parameters, find_next_stock, process_stock_at_t
 
 def project_infrastructure_ssp2(input_df,
-                      check_na_columns = ['CensusPop_20', 'ssp22040', 'volume_Res_2020'],
-                      current_stock_column = 'cl_total_length_2020', # 'volume_Res_2020',
-                      current_pop_column = 'CensusPop_20',
-                      project_pop_columns = ['ssp22030', 'ssp22040', 'ssp22050', 'ssp22060', 'ssp22070', 'ssp22080', 'ssp22090', 'ssp22100'],
-                      case = 'mean', infrastructure = 'RL',
-                      output_path = r'outputfiles\outputs_beta_mean\\'):
+                      check_na_columns, # = ['CensusPop_20', 'ssp22040', 'volume_Res_2020'],
+                      current_stock_column, # = 'volume_Res_2020',
+                      current_pop_column, # = 'CensusPop_20',
+                      project_pop_columns, # = ['ssp22030', 'ssp22040', 'ssp22050', 'ssp22060', 'ssp22070', 'ssp22080', 'ssp22090', 'ssp22100'],
+                      case, # = 'mean', 
+                      infrastructure, # = 'RBUV',
+                      output_path): # r'outputfiles\outputs_beta_mean\\')
         
     
         if infrastructure == 'RBUV':

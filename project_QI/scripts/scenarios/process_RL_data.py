@@ -261,7 +261,7 @@ def process_roadway_length_data():
     for ax, spine in ax.spines.items():
         spine.set_visible(False)
 
-    plt.show()
+    plt.show(block=False)
 
     def find_example_scale_parameters(df, infra_col, pop_col):
         '''

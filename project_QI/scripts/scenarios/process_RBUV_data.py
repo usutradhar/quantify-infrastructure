@@ -307,7 +307,7 @@ def process_residential_builtup_volume_data():
     for ax, spine in ax.spines.items():
         spine.set_visible(False)
 
-    plt.show()
+    plt.show(block=False)
 
     """### Model comparision Pruned Nonpruned F_test"""
 
