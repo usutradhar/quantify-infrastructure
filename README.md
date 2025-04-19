@@ -83,7 +83,6 @@ Before running the scripts, make sure to have the following installed:
 ### Run the model
 - To run the environemnt with all dependencies inside conda
 - Download the `projectQI` folder
-- Navigate to the `scripts/`
 - Open the teminal/ command prompt for conda
     ```bash
     conda create --name env_porjectQI --file requirements.txt # conda create --name <env> --file <this file>
@@ -95,6 +94,7 @@ Installing the envirnment take some time (15-20 minutes)
 - Navigate to the `projectQI` folder
    ```bash
    conda active env_projectQI
+   cd projectQI # set current directory to projectQI
    pyton main.py  # to get future per capita RBUV and RL values for SSP1, SSP2 and SSP3 scenarios
    ```
 It takes ~10 minutes to run each scerarios for RBUV or RL.
