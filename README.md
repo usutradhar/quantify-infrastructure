@@ -80,19 +80,24 @@ Before running the scripts, make sure to have the following installed:
 
 ### Run the model
 - To run the environemnt with all dependencies inside conda
-- Download the `projectQI` folder
-- Open the teminal/ command prompt for conda
+- Download the `quantify-infrastructure` folder
+- Open the teminal/ command prompt for conda and exceute the following:
     ```bash
-    conda create --name env_porjectQI --file requirements.txt # conda create --name <env> --file <this file>
+    conda conda env create -f environment.yml 
+     ```
+- Open the teminal and install with pip:
+
+    ```bash
+    py -m pip install -r requirements.txt
      ```
 Installing the envirnment take some time (15-20 minutes)
 
 - To run the project:
 - Open terminal
-- Navigate to the `projectQI` folder
+- Navigate to the `quantify-infrastructure` folder
    ```bash
-   conda active env_projectQI
-   cd projectQI # set current directory to projectQI
+   conda active quantify-infrastructure
+   cd quantify-infrastructure # set current directory to projectQI
    python main.py  # to get future per capita RBUV and RL values for SSP1, SSP2 and SSP4 scenarios
    ```
 It takes ~10 minutes to run each scerarios for RBUV or RL.
