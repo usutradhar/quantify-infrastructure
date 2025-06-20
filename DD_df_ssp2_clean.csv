@@ -1,0 +1,53 @@
+﻿Column name,Description
+GEOID,unique geoid for each city
+NAMELSAD,name of the city
+city type,"degree of urbanization [urban, suburban, periurban, rural]"
+REGION,"census Regions [Northeast, Midwest, West, South]"
+ALAND,land area of the city
+label,"2020 population trend derived from census data 2000,2010, 2020"
+future trend from SSP 2,population trend for SSP 2 (using MK test on ssp2020 to ssp2100 data)
+CensusPop_20,population in the city from 2020 US census
+ssp22030,forecasted population in a city in 2030 following SSP 2
+ssp22040,forecasted population in a city in 2040 following SSP 3
+ssp22050,forecasted population in a city in 2050 following SSP 4
+ssp22060,forecasted population in a city in 2060 following SSP 5
+ssp22070,forecasted population in a city in 2070 following SSP 6
+ssp22080,forecasted population in a city in 2080 following SSP 7
+ssp22090,forecasted population in a city in 2090 following SSP 8
+ssp22100,forecasted population in a city in 2100 following SSP 9
+volume_m3_perCap_2020,per capita residential built up volume in a city in 2020 (cubic meter/person)
+volume_m3_perCap_2030,per capita residential built up volume in a city in 2030 (cubic meter/person)
+volume_m3_perCap_2040,per capita residential built up volume in a city in 2030 (cubic meter/person)
+volume_m3_perCap_2050,per capita residential built up volume in a city in 2040 (cubic meter/person)
+volume_m3_perCap_2060,per capita residential built up volume in a city in 2050 (cubic meter/person)
+volume_m3_perCap_2070,per capita residential built up volume in a city in 2060 (cubic meter/person)
+volume_m3_perCap_2080,per capita residential built up volume in a city in 2070 (cubic meter/person)
+volume_m3_perCap_2090,per capita residential built up volume in a city in 2080 (cubic meter/person)
+volume_m3_perCap_2100,per capita residential built up volume in a city in 2090 (cubic meter/person)
+length_m_perCap_2020,per capita local roadway lane meters in a city in 2100 (meter/person)
+length_m_perCap_2030,per capita local roadway lane meters in a city in 2030 (meter/person)
+length_m_perCap_2040,per capita local roadway lane meters in a city in 2040 (meter/person)
+length_m_perCap_2050,per capita local roadway lane meters in a city in 2050 (meter/person)
+length_m_perCap_2060,per capita local roadway lane meters in a city in 2060 (meter/person)
+length_m_perCap_2070,per capita local roadway lane meters in a city in 2070 (meter/person)
+length_m_perCap_2080,per capita local roadway lane meters in a city in 2080 (meter/person)
+length_m_perCap_2090,per capita local roadway lane meters in a city in 2090 (meter/person)
+length_m_perCap_2100,per capita local roadway lane meters in a city in 2100 (meter/person)
+weighted_HU_density_sqmi,weighted housing unit density in a city
+citytype_at_2030,"degree of urbanization in 2030 [urban, suburban, periurban, rural]"
+citytype_at_2040,"degree of urbanization in 2040 [urban, suburban, periurban, rural]"
+citytype_at_2050,"degree of urbanization in 2050 [urban, suburban, periurban, rural]"
+citytype_at_2060,"degree of urbanization in 2060 [urban, suburban, periurban, rural]"
+citytype_at_2070,"degree of urbanization in 2070 [urban, suburban, periurban, rural]"
+citytype_at_2080,"degree of urbanization in 2080 [urban, suburban, periurban, rural]"
+citytype_at_2090,"degree of urbanization in 2090 [urban, suburban, periurban, rural]"
+citytype_at_2100,"degree of urbanization in 2100 [urban, suburban, periurban, rural]"
+RBUV_Burden_2050,"infrastructure burden defined as the change in per capita infrastructure value (volume or length, calculated as the difference in per capita infrastructure at time t2 and t1, where t2>t1
+if the diffrenece is positive -> increasing burden,
+if the difference is negative -> decreasing burden"
+RBUV_Burden_2100,
+RL_Burden_2050,
+RL_Burden_2100,
+,
+Note: ,
+"Here, the term 'city' refers to 'place' defined by the US Census",

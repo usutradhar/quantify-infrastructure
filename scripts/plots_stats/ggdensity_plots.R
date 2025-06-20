@@ -1,0 +1,233 @@
+# Source1 : https://www.r-bloggers.com/2022/07/ggdensity-a-new-r-package-for-plotting-high-density-regions/#:~:text=Posted%20by%20Business%20Science,ggdensity
+# Source2: https://stackoverflow.com/questions/70727159/create-customized-plotting-function-and-run-it-with-dynamic-parameters-using-r
+# Source3: https://stackoverflow.com/questions/13649473/add-a-common-legend-for-combined-ggplots
+# ====================
+
+setwd("E:/Scripts/project_QI") # set path to working directory
+# ----- LIBRARIES -----
+library(tidyverse)
+library(tidyquant)
+library(ggdensity)
+
+# --- DATA -----
+# LESS THAN OR EQUAL 10000
+plot_median_density = function(DF=df, X="", Y="", GROUP="", title_text = ""){
+  # Create ggplot2 scatterplot
+  return(
+  ggplot(DF,               
+               aes(x = .data[[X]],
+                   y = .data[[Y]],
+                   fill = .data[[GROUP]])) +
+    # New geom
+    geom_hdr(probs = c(0.9, 0.5)) +
+    geom_point(shape =21, size =2) +
+    scale_fill_manual(values=c("brown", "goldenrod2", "aquamarine4", "olivedrab")) +
+    # scale_fill_tq() +
+    theme_tq() +
+    # labs(title = paste0("Median values for states for cities with 10,000 population or less by " ,  title_text))+ 
+    scale_x_continuous(name="Per capita residential built volume (m³)", limits=c(200, 1350)) +
+    scale_y_continuous(name="Per capita roadway length (m)", limits=c(-5, 120))
+  )
+}
+
+data <- read.csv('outputfiles/csvs/df_grouped_ssp2_1.csv')
+data$city <- NA
+data$city <- factor(data$city.type, levels = c("urban", "suburban", "periurban", "rural"))
+data <- data[order(data$city), ]
+p1 <- plot_median_density(DF = data, X = "volume_m3_perCap_2020", Y = "length_m_perCap_2020", GROUP="city",
+                          title_text = "city type in 2020")
+
+data <- read.csv('outputfiles/csvs/df_grouped2_ssp2_1.csv')
+# data <- dplyr::filter(data, CensusPop_20 <= 10000)
+sum(is.na(data))
+data$city <- NA
+data$city <- factor(data$citytype_at_2050, levels = c("urban", "suburban", "periurban", "rural"))
+data <- data[order(data$city), ]
+p2 <- plot_median_density(DF = data, X = "volume_m3_perCap_2050", Y = "length_m_perCap_2050", GROUP="city",
+                          title_text = "city type in 2050")
+
+data <- read.csv('outputfiles/csvs/df_grouped3_ssp2_1.csv')
+# data <- dplyr::filter(data, CensusPop_20 <= 10000) 
+sum(is.na(data))
+data$city <- NA
+data$city <- factor(data$citytype_at_2100, levels = c("urban", "suburban", "periurban", "rural"))
+data <- data[order(data$city), ]
+p3 <- plot_median_density(DF = data, X = "volume_m3_perCap_2100", Y = "length_m_perCap_2100", GROUP="city",
+                          title_text = "city type in 2100")
+
+# load cowplot
+library(cowplot)
+# arrange the three plots in a single row
+prow <- plot_grid( p1 + theme(legend.position="none"),
+                   p2 + theme(legend.position="none"),
+                   p3 + theme(legend.position="none"),
+                   align = 'vh',
+                   labels = c("   2020", "   2050", "   2100"),
+                   hjust = -1,
+                   nrow = 1
+)
+
+# extract the legend from one of the plots
+# (clearly the whole thing only makes sense if all plots
+# have the same legend, so we can arbitrarily pick one.)
+legend_b <- get_legend(p1 + theme(legend.position="bottom"))
+
+# add the legend underneath the row we made earlier. Give it 10% of the height
+# of one plot (via rel_heights).
+p <- plot_grid( prow, legend_b, ncol = 1, rel_heights = c(1, .2))
+p
+outputfile = 'outputfiles/figures/below_10000'
+ggsave(path = outputfile,filename = "temporalPerCapByState_below10000_2050.png", height=5, width=12, unit = 'in', device='png', dpi=300)
+
+
+# OVER 10000
+
+plot_median_density = function(DF=df, X="", Y="", GROUP="", title_text = ""){
+  # Create ggplot2 scatterplot
+  return(
+    ggplot(DF,               
+               aes(x = .data[[X]],
+                   y = .data[[Y]],
+                   fill = .data[[GROUP]])) +
+    # New geom
+    geom_hdr(probs = c(0.9, 0.5)) +
+    geom_point(shape =21, size =2) +
+    scale_fill_manual(values=c("brown", "goldenrod2", "aquamarine4", "olivedrab")) +
+    # scale_fill_tq() +
+    theme_tq() +
+    # labs(title = paste0("Median values for states for cities with over 10,000 population by " ,  title_text))+ 
+    # scale_x_continuous(trans = 'log2') +
+    # scale_y_continuous(trans = 'log2') 
+    scale_x_continuous(name="Per capita residential built volume (m³)", limits=c(200, 1500)) +
+    scale_y_continuous(name="Per capita roadway length (m)", limits=c(0, 25))
+    #+ theme(axis.text.x = element_text(size = 5), axis.text.y = element_text(size = 5))
+  )
+  
+  # p1 
+  # outputfile <- 'D:/Work/Box Sync/Quantify Infrastructure/Figures/over_10000'
+  # path =  'D:/Work/Box Sync/Quantify Infrastructure/Figures/'
+  # ggsave(path = outputfile,filename = paste0(title_text, ".png"),height=3, width=4.5, unit = 'in', device='png', dpi=300)
+  # 
+  # return(p1)
+  
+}
+
+data <- read.csv('outputfiles/csvs/df_grouped_ssp2_2.csv')
+data$city <- NA
+data$city <- factor(data$city.type, levels = c("urban", "suburban", "periurban", "rural"))
+data <- data[order(data$city), ]
+p1 <- plot_median_density(DF = data, X = "volume_m3_perCap_2020", Y = "length_m_perCap_2020", GROUP="city",
+                          title_text = "city type in 2020")
+
+data <- read.csv('outputfiles/csvs/df_grouped2_ssp2_2.csv')
+data$city <- NA
+data$city <- factor(data$citytype_at_2050, levels = c("urban", "suburban", "periurban", "rural"))
+data <- data[order(data$city), ]
+p2 <- plot_median_density(DF = data, X = "volume_m3_perCap_2050", Y = "length_m_perCap_2050", GROUP="city",
+                          title_text = "city type in 2050")
+
+data <- read.csv('outputfiles/csvs/df_grouped3_ssp2_2.csv')
+data$city <- NA
+data$city <- factor(data$citytype_at_2100, levels = c("urban", "suburban", "periurban", "rural"))
+data <- data[order(data$city), ]
+p3 <- plot_median_density(DF = data, X = "volume_m3_perCap_2100", Y = "length_m_perCap_2100", GROUP="city",
+                          title_text = "city type in 2100")
+
+
+# load cowplot
+library(cowplot)
+# arrange the three plots in a single row
+prow <- plot_grid( p1 + theme(legend.position="none"),
+                   p2 + theme(legend.position="none"),
+                   p3 + theme(legend.position="none"),
+                   align = 'vh',
+                   labels = c("   2020", "   2050", "   2100"),
+                   hjust = -1,
+                   nrow = 1
+)
+
+# extract the legend from one of the plots
+# (clearly the whole thing only makes sense if all plots
+# have the same legend, so we can arbitrarily pick one.)
+legend_b <- get_legend(p1 + theme(legend.position="bottom"))
+
+# add the legend underneath the row we made earlier. Give it 10% of the height
+# of one plot (via rel_heights).
+p <- plot_grid( prow, legend_b, ncol = 1, rel_heights = c(1, .2))
+p
+outputfile =  'outputfiles/figures/above_10000'
+ggsave(path = outputfile,filename = "temporalPerCapByState_over10000_2050.png", height=5, width=12, unit = 'in', device='png', dpi=300)
+
+
+############################################################################
+# ----- LIBRARIES -----
+library(tidyverse)
+library(tidyquant)
+library(ggdensity)
+
+# LESS THAN OR EQUAL 10000
+plot_median_density = function(DF=df, X="", Y="", GROUP="", title_text = ""){
+  
+  # Create ggplot2 scatterplot
+  return(
+    ggplot(DF,               
+           aes(x = .data[[X]],
+               y = .data[[Y]],
+               fill = .data[[GROUP]])) +
+      # New geom
+      geom_hdr(probs = c(0.9, 0.5)) +
+      geom_point(shape =21, size =2) +
+      scale_fill_manual(values=c("brown", "goldenrod2", "aquamarine4", "olivedrab")) +
+      # scale_fill_tq() +
+      # theme_tq() +
+      # labs(title = paste0("Median values for states for cities with 10,000 population or less by " ,  title_text))+ 
+      scale_x_continuous(name="Per capita residential built volume (m³)", limits=c(200, 1350)) +
+      scale_y_continuous(name="Per capita roadway length (m)", limits=c(-5, 120))
+  )
+}
+
+data <- read.csv('outputfiles/csvs/df_grouped_ssp2_1.csv')
+data$city <- NA
+data$city <- factor(data$city.type, levels = c("urban", "suburban", "periurban", "rural"))
+data <- data[order(data$city), ]
+p1 <- plot_median_density(DF = data, X = "volume_m3_perCap_2020", Y = "length_m_perCap_2020", GROUP="city",
+                          title_text = "city type in 2020")
+
+data <- read.csv('outputfiles/csvs/df_grouped2_ssp2_1.csv')
+# data <- dplyr::filter(data, CensusPop_20 <= 10000)
+sum(is.na(data))
+data$city <- NA
+data$city <- factor(data$citytype_at_2050, levels = c("urban", "suburban", "periurban", "rural"))
+data <- data[order(data$city), ]
+p2 <- plot_median_density(DF = data, X = "volume_m3_perCap_2050", Y = "length_m_perCap_2050", GROUP="city",
+                          title_text = "city type in 2050")
+
+data <- read.csv('outputfiles/csvs/df_grouped3_ssp2_1.csv')
+# data <- dplyr::filter(data, CensusPop_20 <= 10000) 
+sum(is.na(data))
+data$city <- NA
+data$city <- factor(data$citytype_at_2100, levels = c("urban", "suburban", "periurban", "rural"))
+data <- data[order(data$city), ]
+p3 <- plot_median_density(DF = data, X = "volume_m3_perCap_2100", Y = "length_m_perCap_2100", GROUP="city",
+                          title_text = "city type in 2100")
+
+# load cowplot
+library(cowplot)
+# arrange the three plots in a single row
+prow <- plot_grid( p1 + theme(legend.position="none"),
+                   p2 + theme(legend.position="none"),
+                   p3 + theme(legend.position="none"),
+                   align = 'vh',
+                   labels = c("   2020", "   2050", "   2100"),
+                   hjust = -1,
+                   nrow = 1
+)
+
+# have the same legend, so we can arbitrarily pick one.)
+legend_b <- get_legend(p1 + theme(legend.position="bottom"))
+
+# add the legend underneath the row we made earlier. Give it 10% of the height
+# of one plot (via rel_heights).
+p <- plot_grid( prow, legend_b, ncol = 1, rel_heights = c(1, .2))
+p
+

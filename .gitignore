@@ -1,0 +1,23 @@
+
+
+# ignore all directories with the name test
+# data/
+# outputfiles/
+outputfiles/csvs_gte/
+outputfiles/json/
+outputfiles/*.txt
+D3_plots
+
+# To ignore __pycache__ directories and .pyc files
+__pycache__/
+*.pyc
+*.png
+
+
+# To ignore shapefiles
+*.shp
+
+scripts/plots_stats/*.pyc
+scripts/functions/*.pyc
+scripts/scenarios/*.pyc
+scripts/plots_stats/estimate buden_trial
