@@ -1,4 +1,4 @@
-name: projectQI
+name: quantify-infrastructure
 channels:
   - conda-forge
   - defaults
