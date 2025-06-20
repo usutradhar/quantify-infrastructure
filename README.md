@@ -85,10 +85,10 @@ Before running the scripts, make sure to have the following installed:
     ```bash
     conda conda env create -f environment.yml 
      ```
-- Open the teminal and install with pip:
+- or the following 
 
     ```bash
-    py -m pip install -r requirements.txt
+    conda create --name quantify-infrastructure --file requirements.txt # conda create --name <env> --file <this file>
      ```
 Installing the envirnment take some time (15-20 minutes)
 
