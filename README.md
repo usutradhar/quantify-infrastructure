@@ -4,7 +4,7 @@ This project quantifies the residential built up volume and loacl roadway length
 The data and analysis for the project is organized as follows:
 
 ```bash
-project_QI/
+quantify-infrastructure/
 
 ├── data/
     └── ghsl
