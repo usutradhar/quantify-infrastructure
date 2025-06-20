@@ -1,5 +1,4 @@
 # quantify-infrastructure
-# quantify-infrastructure
 This project quantifies the residential built up volume and loacl roadway length for U.S. cities and project upto 2100 to measure the infrastructure burden.
 The data and analysis for the project is organized as follows:
 
