@@ -96,7 +96,7 @@ Installing the envirnment take some time (15-20 minutes)
 - Open terminal
 - Navigate to the `quantify-infrastructure` folder
    ```bash
-   conda active quantify-infrastructure
+   conda activate quantify-infrastructure
    cd quantify-infrastructure # set current directory to quantify-infrastructure
    python main.py  # to get future per capita RBUV and RL values for SSP1, SSP2 and SSP4 scenarios
    ```
