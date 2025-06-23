@@ -101,11 +101,18 @@ Installing the envirnment take some time (15-20 minutes)
    python main.py  # to get future per capita RBUV and RL values for SSP1, SSP2 and SSP4 scenarios
    ```
 It takes ~10 minutes to run each scerarios for RBUV or RL.
+Running main.py results is 3 output files for each scenario. For example for scenario 2, the output files are 
+buildings_perCap_ssp2.csv, 
+output_city_type_ssp2.csv, and 
+roads_perCap_ssp2_local.csv
+Output files are saved in the csvs folder inside outputfiles. A text file containing Standard Output is also generated and saved in the outputfiles folder. 
 
+### Once you have the output files for three scenarios 
 ### Generate the figures and compare analysis results
+- Open your IDE for python. Open quantify-infrastructure folder.
 - Navigate to the `scripts/plots_stats` folder
-
-   ```bash
+- Select any of the files and run
+  ```bash
    perCapInfra_stats_clean.ipynb
    quantify_burden.ipynb
    plot_density-distn.ipynb
