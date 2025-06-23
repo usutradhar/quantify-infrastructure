@@ -83,7 +83,7 @@ Before running the scripts, make sure to have the following installed:
 - Download the `quantify-infrastructure` folder
 - Open the teminal/ command prompt for conda and exceute the following:
     ```bash
-    conda conda env create -f environment.yml 
+    conda env create -f environment.yml 
      ```
 - or the following 
 
