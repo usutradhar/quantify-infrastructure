@@ -105,7 +105,7 @@ Running main.py results is 3 output files for each scenario. For example for sce
 buildings_perCap_ssp2.csv, 
 output_city_type_ssp2.csv, and 
 roads_perCap_ssp2_local.csv
-Output files are saved in the csvs folder inside outputfiles. A text file containing Standard Output is also generated and saved in the outputfiles folder. 
+Output files are saved in the csvs folder inside outputfiles. 
 
 ### Once you have the output files for three scenarios 
 ### Generate the figures and compare analysis results
