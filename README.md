@@ -99,7 +99,7 @@ Installing the envirnment take some time (15-20 minutes)
    cd quantify-infrastructure # set current directory to quantify-infrastructure
    python main.py  # to get future per capita RBUV and RL values for SSP1, SSP2 and SSP4 scenarios
    ```
-It takes ~10 minutes to run each scerarios for RBUV or RL (in total ~55 minutes in a Intel Core i5, RAM 32 GB, storage 512GB SSD).
+It takes ~10 minutes to run each scerarios for RBUV or RL (in total ~55 minutes in a Intel Core i5, RAM 32 GB, storage 512GB SSD). \
 Running main.py results is 3 output files for each scenario. For example for scenario 2, the output files are 
 buildings_perCap_ssp2.csv, 
 output_city_type_ssp2.csv, and 
