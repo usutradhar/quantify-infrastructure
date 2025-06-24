@@ -29,7 +29,6 @@ quantify-infrastructure/
         └── get_df_ssp.py
         └── plot_funcs.py 
 ├── outputfiles/
-    └── output.txt (contains terminal output once main.py is run)
     └── csvs       (contains all the output csv files)
     └── figures    (contains all the output figures)
    
