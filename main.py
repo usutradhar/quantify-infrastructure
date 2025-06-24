@@ -24,7 +24,7 @@ def main():
     # Redirect stdout to capture output
     original_stdout = sys.stdout
     captured_output = StringIO()
-    sys.stdout = captured_output
+    # sys.stdout = captured_output
 
     building_with_pop = process_residential_builtup_volume_data()
     roads_clean = process_roadway_length_data()
@@ -98,10 +98,10 @@ def main():
 
     print("All scripts done!")
 
-    # Restore original stdout and write to file
-    sys.stdout = original_stdout
-    with open(r"outputfiles\output.txt", "w") as f:
-        f.write(captured_output.getvalue())
+    # # Restore original stdout and write to file
+    # sys.stdout = original_stdout
+    # with open(r"outputfiles\output.txt", "w") as f:
+    #     f.write(captured_output.getvalue())
 
 
 if __name__ == "__main__":
