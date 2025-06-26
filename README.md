@@ -85,7 +85,7 @@ Before running the scripts, make sure to have the following installed:
     ```bash
     conda env create -f environment.yml
     conda activate quantify-infrastructure
-    cd quantify-infrastructure # set current directory to quantify-infrastructure
+    cd path\to\quantify-infrastructure # set current directory to quantify-infrastructure
      ```
 - or to install via **pip**, navigate to the `quantify-infrastructure` folder, create a virtual environment
   and inside the virtual environment install the packages
