@@ -78,7 +78,7 @@ Before running the scripts, make sure to have the following installed:
 - Required libraries (listed in `requirements.txt`, also provided as `environment.yml`)
 - Here the same name has been used for both the project directory and the virtual environment in conda
 
-### Run the model
+### Install the environment
 - To run the environemnt with all dependencies inside conda
 - Download the `quantify-infrastructure` folder
 - Open the teminal/ command prompt for conda and exceute the following:
@@ -95,11 +95,10 @@ Before running the scripts, make sure to have the following installed:
     python -m venv venv_name
     venv_name\Scripts\activate
     pip install -r requirements.txt
-    ```
-    
+    ```    
 Installing the envirnment take some time (15-20 minutes)
 
-- To run the project:
+### Run the model:
 - Open terminal
 - Navigate to the `quantify-infrastructure` folder
    ```bash
