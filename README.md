@@ -87,19 +87,16 @@ Before running the scripts, make sure to have the following installed:
     conda activate quantify-infrastructure
     cd quantify-infrastructure # set current directory to quantify-infrastructure
      ```
-- or to install via **pip**
-- navigate to the `quantify-infrastructure` folder
-- create a virtual environment 
+- or to install via **pip**, navigate to the `quantify-infrastructure` folder, create a virtual environment
+  and inside the virtual environment install the packages
 
     ```bash
     cd path\to\quantify-infrastructure
     python -m venv venv_name
     venv_name\Scripts\activate
-    ```
-- inside the virtual environment install the packages
-    ```bash
     pip install -r requirements.txt
     ```
+    
 Installing the envirnment take some time (15-20 minutes)
 
 - To run the project:
