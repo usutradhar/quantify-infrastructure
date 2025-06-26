@@ -76,7 +76,7 @@ This folder holds the results generated from the scripts. It is divided into two
 Before running the scripts, make sure to have the following installed:
 - Python (version 3.12)
 - Required libraries (listed in `requirements.txt`, also provided as `environment.yml`/`environment_updated.yml`). \
-[Note: `environment_updated.yml` is a cleaner version that ensures faster installation. `environment.yml` comes with all the packages required for data extraction and cleaning, which is not needed to run this project.] \
+[Note: `environment_updated.yml` is a cleaner version that ensures faster installation. `environment.yml` comes with all the packages required for data extraction, processing, cleaning, and modeling, which is not needed to run this project.] 
 - Here the same name has been used for both the project directory and the virtual environment in conda
 
 ### Install the environment
