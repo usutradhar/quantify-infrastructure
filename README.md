@@ -75,7 +75,7 @@ This folder holds the results generated from the scripts. It is divided into two
 ### Prerequisites
 Before running the scripts, make sure to have the following installed:
 - Python (version 3.12)
-- Required libraries (listed in `requirements.txt`, also provided as `environment.yml`)
+- Required libraries (listed in `requirements.txt`, also provided as `environment.yml`/`environment_updated.yml`). `environment_updated.yml` is a cleaner version that ensures faster installation 
 - Here the same name has been used for both the project directory and the virtual environment in conda
 
 ### Install the environment
@@ -83,7 +83,7 @@ Before running the scripts, make sure to have the following installed:
 - Download the `quantify-infrastructure` folder
 - Open the teminal/ command prompt for conda and exceute the following:
     ```bash
-    conda env create -f environment.yml
+    conda env create -f environment_updated.yml
     conda activate quantify-infrastructure
     cd path\to\quantify-infrastructure # set current directory to quantify-infrastructure
      ```
