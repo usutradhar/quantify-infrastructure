@@ -76,27 +76,36 @@ This folder holds the results generated from the scripts. It is divided into two
 Before running the scripts, make sure to have the following installed:
 - Python (version 3.12)
 - Required libraries (listed in `requirements.txt`, also provided as `environment.yml`)
+- Here the same name has been used for both the project directory and the virtual environment in conda
 
 ### Run the model
 - To run the environemnt with all dependencies inside conda
 - Download the `quantify-infrastructure` folder
 - Open the teminal/ command prompt for conda and exceute the following:
     ```bash
-    conda env create -f environment.yml 
+    conda env create -f environment.yml
+    conda activate quantify-infrastructure
+    cd quantify-infrastructure # set current directory to quantify-infrastructure
      ```
-- or the following 
+- or to install via **pip**
+- navigate to the `quantify-infrastructure` folder
+- create a virtual environment 
 
     ```bash
-    conda create --name quantify-infrastructure --file requirements.txt # conda create --name <env> --file <this file>
-     ```
+    cd path\to\quantify-infrastructure
+    python -m venv venv_name
+    venv_name\Scripts\activate
+    ```
+- inside the virtual environment install the packages
+    ```bash
+    pip install -r requirements.txt
+    ```
 Installing the envirnment take some time (15-20 minutes)
 
 - To run the project:
 - Open terminal
 - Navigate to the `quantify-infrastructure` folder
    ```bash
-   conda activate quantify-infrastructure
-   cd quantify-infrastructure # set current directory to quantify-infrastructure
    python main.py  # to get future per capita RBUV and RL values for SSP1, SSP2 and SSP4 scenarios
    ```
 It takes ~10 minutes to run each scerarios for RBUV or RL (in total ~55 minutes in a Intel Core i5, RAM 32 GB, storage 512GB SSD). \
