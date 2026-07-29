@@ -10,16 +10,9 @@ quantify-infrastructure/
     └── housing_data_ACS
     └── osm
     └── population
-    └── scripts_data_dowmload
+    └── others
+    └── scripts_data_download
 ├── scripts/
-    └── functions
-        └── functions_scaling_vect.py
-    └── scenarios
-        └── process_RBUV_data.py
-        └── process_RL_data.py
-        └── project_infrastructure_ssp1.py
-        └── project_infrastructure_ssp2.py
-        └── project_infrastructure_ssp4.py
     └── plots_stats
         └── perCapInfra_stats_clean.ipynb
         └── quantify_burden.ipynb
@@ -31,6 +24,11 @@ quantify-infrastructure/
 ├── outputfiles/
     └── csvs       (contains all the output csv files)
     └── figures    (contains all the output figures)
+
+├── Random_effect_RBUV.ipynb
+├── Fixed_effect_RL.ipynb
+├── plot_treemap_InfrastructureLoad.ipynb
+├── plot_ggdensity_plotsR.ipynb
    
 ```
 
@@ -41,9 +39,10 @@ This folder contains the raw data files necessary for the analysis. It is organi
 - **`housing_data_ACS/`**: Contains data on household percentage and age from American Comminuty Survey (ACS) at place level.
 - **`osm/`**: Contains data extracted from OpenStreetMap data for cities in each state.
 - **`population/`**: Contains datasets related to population forecasts for each decade and socio-demographics attributes.
+- **`others/`**: Contains historical data for population and built up volume.
 - **`scripts_data_dowmload/`**: Contains scripts used to extract data grom GHSL and OSM databases.
 
-Notes abour **`scripts_data_dowmload`**:
+Notes about **`scripts_data_dowmload`**:
 - **`extract GHSL data.txt`**: Residential built up volume (RBUV) is extracted from Google Earth Engine Code editor using summarized per city/place.
 - **`0_read_OSM_2_streetsdf_final.ipynb/0_read_OSM_2_streetsdf_CFT_final.ipynb`**: Roadway network length (RL) is extracted from OpenStreetMap and coverted to dataframes summarized by roadway type for cities.
 This data extraction process takes some time and the files are too big. Therefore, only processed input files have been provided in the data folder.
@@ -52,11 +51,6 @@ unit data for built up volume can be accessed using this file: **`https://code.e
 
 ### 2. **`scripts/`**
 This folder contains all the Python (or R) scripts that are used for processing, analyzing, and visualizing the data. The scripts should be run in the appropriate environment with necessary dependencies installed.
-
-functions: Contains the functions for initial data processing before analysis and function to fit urban scaling law     \
-scenarios: Fits urban scaling laws to SSP1, SSP2 and SSP4 population projections to get future RBUV and RL              \
-         ── process files process RBUV and RL data                                                                      \
-         ── project files project RBUV and RL for three SSP scenarios upto 2100 at each decade interval                 \
 plots_stats: Shows the anlaysis outcomes as jupyter notebooks                                                           \
          ── `get_df_ssp.py` (combines analysis outputs for the three SSP sceanrios)                                     \
          ── `plot_funcs.py` (creates frequently used plots)                                                               
@@ -68,6 +62,11 @@ This folder holds the results generated from the scripts. It is divided into two
 - **`csvs/`**: Contains the CSV files with processed data or output generated from the analysis.
 - **`df_ssp2_clean`**: Final output dataset with per capita residential built volume (m3) and roadway length (m) at every decade time interval for scenario SSP 2.
 - **`DD_df_ssp2_clean`**: Data dictionary for **`df_ssp2_clean.csv`**
+
+- **`Random_effect_RBUV.ipynb/`**: Code to forecast residential built up volume (RBUV) for all cities up to 2100. Can be run in Google Colab
+- **`Fixed_effect_RL.ipynb/`**: Code to forecast residential built up volume (RBUV) for all cities up to 2100. Can be run in Google Colab
+- **`plot_treemap_InfrastructureLoad.ipynb/`**: Creates treemap
+- **`plot_ggdensity_plotsR.ipynb/`**: Creates density plots
   
 
 ## To run the analysis in local machines:
@@ -94,7 +93,7 @@ Before running the scripts, make sure to have the following installed:
     ```bash
     cd path\to\quantify-infrastructure
     python -m venv venv_name
-    venv_name\Scripts\activate
+    venv_name\activate
     pip install -r requirements.txt
     ```    
 Installing the envirnment take some time (15-20 minutes)
@@ -103,13 +102,9 @@ Installing the envirnment take some time (15-20 minutes)
 - Open terminal
 - Navigate to the `quantify-infrastructure` folder
    ```bash
-   python main.py  # to get future per capita RBUV and RL values for SSP1, SSP2 and SSP4 scenarios
+   run Random_effect_RBUV.ipynb to get future RBUV loads
+   run Fixed_effect_RL.ipynb to get future RBUV loads
    ```
-It takes ~10 minutes to run each scerarios for RBUV or RL (in total ~55 minutes in a Intel Core i5, RAM 32 GB, storage 512GB SSD). \
-Running main.py results is 3 output files for each scenario. For example for scenario 2, the output files are 
-buildings_perCap_ssp2.csv, 
-output_city_type_ssp2.csv, and 
-roads_perCap_ssp2_local.csv
 Output files are saved in the csvs folder inside outputfiles. 
 
 ### Once you have the output files for three scenarios 
