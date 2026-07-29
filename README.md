@@ -62,6 +62,8 @@ This folder holds the results generated from the scripts. It is divided into two
 - **`csvs/`**: Contains the CSV files with processed data or output generated from the analysis.
 - **`df_ssp2_clean`**: Final output dataset with per capita residential built volume (m3) and roadway length (m) at every decade time interval for scenario SSP 2.
 - **`DD_df_ssp2_clean`**: Data dictionary for **`df_ssp2_clean.csv`**
+
+### 4. **`Models and plots`**
 - **`Random_effect_RBUV.ipynb`**: Random effects model to forecast residential built up volume (RBUV) for all cities up to 2100.
 - **`Fixed_effect_RL.ipynb`**: Fixed effects model to forecast local roadway length (RL) for all cities up to 2100. 
 - **`plot_treemap_InfrastructureLoad.ipynb`**: Creates treemap
