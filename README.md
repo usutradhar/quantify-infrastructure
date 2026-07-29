@@ -18,7 +18,6 @@ quantify-infrastructure/
         └── quantify_burden.ipynb
         └── plot_density-distn.ipynb
         └── plot_burdenExtent.ipynb
-        └── plot_gifs.ipynb
         └── get_df_ssp.py
         └── plot_funcs.py 
 ├── outputfiles/
