@@ -63,10 +63,12 @@ This folder holds the results generated from the scripts. It is divided into two
 - **`df_ssp2_clean`**: Final output dataset with per capita residential built volume (m3) and roadway length (m) at every decade time interval for scenario SSP 2.
 - **`DD_df_ssp2_clean`**: Data dictionary for **`df_ssp2_clean.csv`**
 
-- **`Random_effect_RBUV.ipynb/`**: Code to forecast residential built up volume (RBUV) for all cities up to 2100. Can be run in Google Colab
-- **`Fixed_effect_RL.ipynb/`**: Code to forecast residential built up volume (RBUV) for all cities up to 2100. Can be run in Google Colab
-- **`plot_treemap_InfrastructureLoad.ipynb/`**: Creates treemap
-- **`plot_ggdensity_plotsR.ipynb/`**: Creates density plots
+- **`Random_effect_RBUV.ipynb`**:
+- Random effects model to forecast residential built up volume (RBUV) for all cities up to 2100. Update the filepath if running in local computer. To run inside Google Colab, add the project directory to MyDrive.
+- **`Fixed_effect_RL.ipynb`**:
+- Fixed effects model to forecast local roadway length (RL) for all cities up to 2100. Update the filepath if running in local computer. To run inside Google Colab, add the project directory to MyDrive.
+- **`plot_treemap_InfrastructureLoad.ipynb`**: Creates treemap
+- **`plot_ggdensity_plotsR.ipynb`**: Creates density plots
   
 
 ## To run the analysis in local machines:
