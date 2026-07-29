@@ -50,7 +50,7 @@ To extract data for a single place,
 unit data for built up volume can be accessed using this file: **`https://code.earthengine.google.com/31f072870e93ccad4fb8f0e1b6f4efb3`**
 
 ### 2. **`scripts/`**
-This folder contains all the Python (or R) scripts that are used for processing, analyzing, and visualizing the data. The scripts should be run in the appropriate environment with necessary dependencies installed.
+This folder contains all the Python (or R) scripts that are used for visualizing the data. The scripts should be run in the appropriate environment with necessary dependencies installed.
 plots_stats: Shows the anlaysis outcomes as jupyter notebooks                                                           \
          ── `get_df_ssp.py` (combines analysis outputs for the three SSP sceanrios)                                     \
          ── `plot_funcs.py` (creates frequently used plots)                                                               
@@ -62,14 +62,13 @@ This folder holds the results generated from the scripts. It is divided into two
 - **`csvs/`**: Contains the CSV files with processed data or output generated from the analysis.
 - **`df_ssp2_clean`**: Final output dataset with per capita residential built volume (m3) and roadway length (m) at every decade time interval for scenario SSP 2.
 - **`DD_df_ssp2_clean`**: Data dictionary for **`df_ssp2_clean.csv`**
-
-- **`Random_effect_RBUV.ipynb`**:
-- Random effects model to forecast residential built up volume (RBUV) for all cities up to 2100. Update the filepath if running in local computer. To run inside Google Colab, add the project directory to MyDrive.
-- **`Fixed_effect_RL.ipynb`**:
-- Fixed effects model to forecast local roadway length (RL) for all cities up to 2100. Update the filepath if running in local computer. To run inside Google Colab, add the project directory to MyDrive.
+- **`Random_effect_RBUV.ipynb`**: Random effects model to forecast residential built up volume (RBUV) for all cities up to 2100.
+- **`Fixed_effect_RL.ipynb`**: Fixed effects model to forecast local roadway length (RL) for all cities up to 2100. 
 - **`plot_treemap_InfrastructureLoad.ipynb`**: Creates treemap
 - **`plot_ggdensity_plotsR.ipynb`**: Creates density plots
   
+## To run in Google Collaboratory:
+Add the project directory https://drive.google.com/drive/folders/1ZU8NweN33LVnOs9-MpLT9br8qwan0skX?usp=sharing to MyDrive. Open **`Random_effect_RBUV.ipynb`** or **`Fixed_effect_RL.ipynb`** and Run.
 
 ## To run the analysis in local machines:
 
@@ -104,8 +103,13 @@ Installing the envirnment take some time (15-20 minutes)
 - Open terminal
 - Navigate to the `quantify-infrastructure` folder
    ```bash
-   run Random_effect_RBUV.ipynb to get future RBUV loads
-   run Fixed_effect_RL.ipynb to get future RBUV loads
+   Open Random_effect_RBUV.ipynb
+   Update the filepaths if running in local computer.
+   Run all cells.
+   or, 
+   Open Fixed_effect_RL.ipynb
+   Update the filepaths if running in local computer.
+   Run all cells.
    ```
 Output files are saved in the csvs folder inside outputfiles. 
 
