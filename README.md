@@ -49,7 +49,7 @@ This data extraction process takes some time and the files are too big. Therefor
 To extract data for a single place,
 unit data for built up volume can be accessed using this file: **`https://code.earthengine.google.com/31f072870e93ccad4fb8f0e1b6f4efb3`**
 
-### 2. **`scripts/`**
+### 2. **`scripts/`** (not all scripts are used to generate the plots)
 This folder contains all the Python (or R) scripts that are used for visualizing the data. The scripts should be run in the appropriate environment with necessary dependencies installed.
 plots_stats: Shows the anlaysis outcomes as jupyter notebooks                                                           \
          ── `get_df_ssp.py` (combines analysis outputs for the three SSP sceanrios)                                     \
