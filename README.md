@@ -115,8 +115,7 @@ Installing the envirnment take some time (15-20 minutes)
    ```
 Output files are saved in the csvs folder inside outputfiles. 
 
-### Once you have the output files for three scenarios 
-### Generate the figures and compare analysis results
+### Generate the figures
 - Open your IDE for python. Open quantify-infrastructure folder.
 - Navigate to the `scripts/plots_stats` folder
 - Select any of the files and run
@@ -126,4 +125,3 @@ Output files are saved in the csvs folder inside outputfiles.
    plot_density-distn.ipynb
    plot_burdenExtent.ipynb
    ```
-   To get the temporal change in burden with population threshold, prepare data using `process_data_ggdensityR.ipynb` and run the script `ggdensity_plots.R` in RStudio.
